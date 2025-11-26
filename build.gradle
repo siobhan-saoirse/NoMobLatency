@@ -1,0 +1,30 @@
+plugins {
+    id "fabric-loom" version "1.7-SNAPSHOT"
+}
+
+group = "ee.siobkern.nomoblatency"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+    maven { url = "https://maven.fabricmc.net/" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.10"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.15.0"
+
+    // Fabric API (if needed)
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.91.0+1.20.1"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // 1.21+ requires Java 21
+    }
+}

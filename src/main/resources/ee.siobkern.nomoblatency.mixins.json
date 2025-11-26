@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "ee.siobkern.nomoblatency.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["EntityMixin","EntityTypeBuilderMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

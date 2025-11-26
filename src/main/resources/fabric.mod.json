@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "nomoblatency",
+  "version": "1.0.0",
+  "name": "No Mob Latency",
+  "mixins": ["ee.siobkern.nomoblatency.mixins.json"],
+  "entrypoints": { "main": ["ee.siobkern.nomoblatency.NoMobLatency"] }
+}
