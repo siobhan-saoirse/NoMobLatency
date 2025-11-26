@@ -1,6 +1,7 @@
 # Gradle
 .gradle
 /build/
+*.launch
 
 # Compiled class files
 *.class
