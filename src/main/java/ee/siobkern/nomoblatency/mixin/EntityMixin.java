@@ -18,7 +18,7 @@ public abstract class EntityMixin {
 
         double highestY = 0.0;
 
-        AABB contracted = self.getBoundingBox().contract(0.03125, 0.0, 0.03125);
+        AABB contracted = self.getBoundingBox().contract(0.3125, 0.0, 0.3125);
 
         // Block collisions
         for (VoxelShape shape : world.getBlockCollisions(self, contracted)) {
@@ -44,7 +44,7 @@ public abstract class EntityMixin {
 
         double highestY = 0.0;
 
-        AABB contracted = self.getBoundingBox().contract(0.03125, 0.0, 0.03125);
+        AABB contracted = self.getBoundingBox().contract(0.3125, 0.0, 0.3125);
 
         // Block collisions
         for (VoxelShape shape : world.getBlockCollisions(self, contracted)) {
