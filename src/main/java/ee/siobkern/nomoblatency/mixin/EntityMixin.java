@@ -13,52 +13,12 @@ public abstract class EntityMixin {
     @Overwrite
     public boolean canSimulateMovement() 
     {
-        Entity self = (Entity)(Object)this;
-        Level world = self.level();
-
-        double highestY = 0.0;
-
-        AABB contracted = self.getBoundingBox().contract(0.45, 0.0, 0.45);
-
-        // Block collisions
-        for (VoxelShape shape : world.getBlockCollisions(self, contracted)) {
-            for (AABB box : shape.toAabbs()) {   // getBoundingBoxes() does not exist anymore
-                highestY = Math.max(highestY, box.maxY);
-            }
-        }
-        
-        // Apply vertical offset
-        if (highestY > 0.0) {
-            double dy = highestY - self.getBoundingBox().minY;
-            self.setPos(self.getX(), self.getY() + dy, self.getZ());
-        }
-
         return true;
     }
 
     @Overwrite
     public boolean isEffectiveAi() 
     {
-        Entity self = (Entity)(Object)this;
-        Level world = self.level();
-
-        double highestY = 0.0;
-
-        AABB contracted = self.getBoundingBox().contract(0.8, 0.0, 0.8);
-
-        // Block collisions
-        for (VoxelShape shape : world.getBlockCollisions(self, contracted)) {
-            for (AABB box : shape.toAabbs()) {   // getBoundingBoxes() does not exist anymore
-                highestY = Math.max(highestY, box.maxY);
-            }
-        }
-        
-        // Apply vertical offset
-        if (highestY > 0.0) {
-            double dy = highestY - self.getBoundingBox().minY;
-            self.setPos(self.getX(), self.getY() + dy, self.getZ());
-        }
-
         return true;
     }
 }
