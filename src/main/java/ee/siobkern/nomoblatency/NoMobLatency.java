@@ -5,6 +5,6 @@ import net.fabricmc.api.ModInitializer;
 public class NoMobLatency implements ModInitializer {
     @Override
     public void onInitialize() {
-        System.out.println("[ForceServerEntityAI] Loaded.");
+        System.out.println("[No Mob Latency] Loaded.");
     }
 }
